@@ -6,7 +6,7 @@
     data-bs-toggle="offcanvas" data-bs-target="#cart">
     <i class="bi bi-cart"></i>
 
-    @if (OrderItems.Any())
+        @if (OrderItems?.Any() == true)
     {
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
             style="font-size: 0.8rem;">
@@ -22,7 +22,7 @@
         <button class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
-        @if (OrderItems.Any())
+    @if (OrderItems?.Any() == true)
         {
             @foreach (var item in OrderItems)
             {
