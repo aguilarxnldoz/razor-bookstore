@@ -11,7 +11,7 @@
 
 <h1>Bookstore - Checkout</h1>
 
-@if (Order.OrderItems.Any())
+    @if (Order.OrderItems?.Any() == true)
 {
     <dl>
         @foreach(var item in Order.OrderItems)
@@ -40,6 +40,7 @@
         context.Orders.Attach(Order);
         await context.SaveChangesAsync();
 
+        OrderState.ResetOrder();
         NavigationManager.NavigateTo("/");
     }
 
